@@ -59,6 +59,7 @@
   "files.associations": {
     "iostream": "cpp",
     "vector": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "string": "cpp"
   }
 }
