@@ -22,7 +22,7 @@ map<string, string> loadWordSet(const string& filename) {
 
     string line; // 声明一个字符串来存储文件的每一行
     while (getline(inFile, line)) { // 逐行读取文件内容
-        size_t delimiterPos = line.find('|'); // 查找'|'字符的位置
+        size_t delimiterPos = line.find(' '); // 查找'|'字符的位置
         if (delimiterPos != string::npos) { // 如果找到了'|'字符
             string english = line.substr(0, delimiterPos); // 提取'|'字符前的部分作为单词
             string chinese = line.substr(delimiterPos + 1); // 提取'|'字符后的部分作为中文
@@ -48,8 +48,8 @@ int main() {
 
     // 开始单词拼写练习
     for (const auto& entry : wordSet) {
-        cout << "中文意思: " << entry.second << endl; // 显示中文意思
         cout << "剩余单词数量: " << remainingWords << endl; // 显示剩余单词数量
+        cout << "中文意思: " << entry.second << endl; // 显示中文意思
         string userAnswer;
         cout << "请输入对应的单词: "; // 提示用户输入单词
         getline(cin, userAnswer); // 获取用户输入
